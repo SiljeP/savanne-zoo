@@ -82,3 +82,7 @@ h1, h2, h3{
 #f-1, #f-2, #f-3, #f-4, #f-5{
     font-size: 3rem;
 }
+
+.fullBelly{
+    font-size: small;
+}

@@ -38,7 +38,8 @@ function dropMad(event){
 
     if (madType == this.dataset.food) {
         const sp1 = document.createElement("span");
-        sp1.className = "fullHeart";let heart = document.createTextNode("💖");
+        sp1.className = "fullHeart";
+        let heart = document.createTextNode("💖");
         sp1.appendChild(heart);
 
        let target = this.querySelector(".hearts");
@@ -51,15 +52,31 @@ function dropMad(event){
        setInterval(()=>{
         this.classList.remove('animate__animated', 'animate__pulse')
        }, 3000);
-        
-        
-       const parentDiv = sp2.parentNode;
+
+      //Den tæller hvor mange hjerter der er så der ikke kommer mere end 3, som er den, den erstatter.
+       if (target.querySelectorAll(".fullHeart").length <= 2) {
+        console.log(target.querySelectorAll(".fullHeart").length);
+        const parentDiv = sp2.parentNode;
        parentDiv.replaceChild(sp1, sp2);
        pointBox.innerHTML = parseInt(pointBox.innerHTML) + 100;
+       } else {
+        // console.log(target.querySelectorAll(".fullHeart").length);
+        //Når hjerterne er fulde skal der komme et checkbox
+        const full = document.createElement("span");
+        full.className = "fullBelly";
+        let check = document.createTextNode("✅");
+        full.appendChild(check);
+        
+        // fullBelly.classList.add('animate__animated animate__bounceInDown')
+        
+        event.toElement.appendChild(full)
+       } 
+    
     } else {
         alert("Puhaaaaaaaa! Er du dum eller hvad?");
         pointBox.innerHTML = parseInt(pointBox.innerHTML) - 100;
-        //foodBox.removeChild(document.querySelector("#" + madId));
-    }
+        // foodBox.removeChild(document.querySelector("#" + madId));
+    }   
+    
 
 }   
