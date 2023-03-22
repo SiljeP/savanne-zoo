@@ -37,37 +37,29 @@ function dropMad(event){
     let madType = event.dataTransfer.getData("foodName");
 
     if (madType == this.dataset.food) {
-        // let heart = document.createTextNode("💖");
-        // this.appendChild(heart);
-        //let heart = document.createTextNode("🤍");
-        //this.removeChild(0);
-        //this.removeChild(this.firstChild)
         const sp1 = document.createElement("span");
-
-        // Give it an id attribute called 'newSpan'
-        sp1.id = "newSpan";
-
-        // Create some content for the new element.
-        let heart = document.createTextNode("💖");
-
-        // Apply that content to the new element
+        sp1.className = "fullHeart";let heart = document.createTextNode("💖");
         sp1.appendChild(heart);
 
-        // Build a reference to the existing node to be replaced
-        const sp2 = document.querySelector(this.firstChild);
-
-        const parentDiv = sp2.parentNode;
-
-        // Replace existing node sp2 with the new span element sp1
-        parentDiv.replaceChild(sp1, sp2);
-
+       let target = this.querySelector(".hearts");
+       console.log(target);
+       
+       const sp2 = target.querySelector(".heart");
+       console.log(sp2);
+    //    animationen
+       this.classList.add('animate__animated', 'animate__pulse');
+       setInterval(()=>{
+        this.classList.remove('animate__animated', 'animate__pulse')
+       }, 3000);
         
-    // console.log(this);
-        //pointBox.innerHTML = parseInt(pointBox.innerHTML) + 100;
+        
+       const parentDiv = sp2.parentNode;
+       parentDiv.replaceChild(sp1, sp2);
+       pointBox.innerHTML = parseInt(pointBox.innerHTML) + 100;
     } else {
         alert("Puhaaaaaaaa! Er du dum eller hvad?");
         pointBox.innerHTML = parseInt(pointBox.innerHTML) - 100;
-        foodBox.removeChild(document.querySelector("#" + madId));
+        //foodBox.removeChild(document.querySelector("#" + madId));
     }
 
 }   
