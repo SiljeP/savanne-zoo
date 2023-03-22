@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savanne Zoo</title>
+    <!-- EXTRERNAL LINKS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- INTERNAL LINKS -->
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+<div class="wrapper">
+    <h1 >Hjælp de sultne dyr!</h1>
+    <h3>Åh nej, de stakkels dyr har ikke fået mad i flere timer! Hjælp dem med at give det RIGTIGE mad, og støt biodiversiteten! #SavePlanetEarth</h3>
+   <div class="point__box">
+    <p>Dine point</p> <p id="score">0</p>
+    </div>
+    <section id="animals">
+        <p class="text"> Træk maden hen til dyrene </p>
+        <div id="tiger" class="animal" data-food = "meat">Tiger 🐯 🤍🤍🤍🤍🤍</div>
+        <div id="lion" class="animal" data-food = "meat">Løve 🦁 🤍🤍🤍🤍🤍</div>
+        <div id="monkey" class="animal" data-food = "fruit">Abe 🐵 🤍🤍🤍🤍🤍</div>
+        <div id="elephant" class="animal" data-food = "grass"><span>🤍</span>🤍🤍🤍🤍 Elefant 🐘  </div>
+    </section>
+    <section id="foods">
+        <h2>Mad</h2>
+        <div class="foodcontainer">
+            <article id="f-1" draggable="true"  data-food = "fruit">Vindruer 🍇</article>
+            <article id="f-2" draggable="true"  data-food = "fruit">Æbler 🍎</article>
+            <article id="f-3" draggable="true"  data-food = "fruit">Bananer 🍌</article>
+            <article id="f-4" draggable="true"  data-food = "grass">Græs ☘</article>
+            <article id="f-5" draggable="true"  data-food = "meat">Menneske steak 🥩 </article>
+        </div>
+    </section>
+</div>
+
+
+    <script src="java.js"></script>
+</body>
+</html>
