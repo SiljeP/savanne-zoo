@@ -93,7 +93,7 @@ function winner() {
     let popup = document.querySelector("#win");
     let point = parseInt(pointBox.innerHTML);
     
-    if (point == 200) {
+    if (point == 1200) {
         popup.style.opacity = 1;
         popup.classList.add('animate__animated', 'animate__wobble');
     }
