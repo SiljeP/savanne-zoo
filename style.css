@@ -1,24 +1,26 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
     font-family: 'Acme', sans-serif;
     text-align: center;
     padding: 1rem 0;
 }
 
 
-#score{
+#score {
     font-weight: 800;
     padding: 1rem 0;
     text-align: center;
     font-size: x-large;
 }
 
-#text{
+#text {
     font-family: 'Acme', sans-serif;
     text-align: center;
     /* padding:0;
@@ -30,8 +32,8 @@ h1, h2, h3{
     justify-content: center;
 }
 
-    
-.point__box{
+
+.point__box {
     border-radius: 5em;
     background-color: rgb(239, 187, 55);
     contain: content;
@@ -40,49 +42,106 @@ h1, h2, h3{
 
 }
 
-.wrapper{
+.wrapper {
     width: 75%;
     margin: auto;
     display: flex;
     flex-direction: column;
 }
-.animal{
-   padding: 2rem;
-   margin: auto;
 
-   font-size: 4rem;
-   text-align: center;
+.animal {
+    padding: 2rem;
+    margin: auto;
+
+    font-size: 4rem;
+    text-align: center;
 }
-.foodcontainer{
+
+.foodcontainer {
     border: 2px solid black;
-    padding: 1rem;
+    padding: 0.2rem;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
 }
-.foodcontainer article{
-    width: 200px;
+
+.foodcontainer article {
+    width: 100px;
 
     text-align: left;
     padding: 1rem;
     margin-right: 1rem;
 }
 
-.animal .heart{
-    font-size: medium;
-}
-.fullHeart{
+.animal .heart {
     font-size: medium;
 }
 
-#animals{
+.fullHeart {
+    font-size: medium;
+}
+
+#animals {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
 }
 
-#f-1, #f-2, #f-3, #f-4, #f-5{
+#f-1,
+#f-2,
+#f-3,
+#f-4,
+#f-5 {
     font-size: 3rem;
+    
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.fullBelly{
+.fullBelly {
     font-size: small;
+}
+
+#win{
+    opacity: 0;
+    font-family: 'Acme', sans-serif;
+    text-align: center;
+    padding: 0 0 1rem 0;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+/* HERUNDER RESPONSIV DESIGN. man kan dog ikke dragge på mobilen */
+
+@media screen and (max-width: 600px) {
+    body, .point__box{
+        margin: auto;
+        text-align: center;
+    }
+    .point__box{
+        margin-bottom: 2rem;
+    }
+    .foodcontainer{
+        width: 100%;
+        padding: 0.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin:0;
+    }
+    .foodcontainer article {
+        width: 0;
+    
+        text-align: center;
+        padding: 0.5rem;
+        margin-right: auto;
+    }
+
+    #tiger, #lion, #elephant, #monkey{
+        padding: 0.8rem;
+    }
+   
 }

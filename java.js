@@ -53,30 +53,48 @@ function dropMad(event){
         this.classList.remove('animate__animated', 'animate__pulse')
        }, 3000);
 
-      //Den tæller hvor mange hjerter der er så der ikke kommer mere end 3, som er den, den erstatter.
+      //Den tæller hvor mange hjerter der er så der ikke kommer mere end 3, som er dem, den erstatter.
        if (target.querySelectorAll(".fullHeart").length <= 2) {
         console.log(target.querySelectorAll(".fullHeart").length);
         const parentDiv = sp2.parentNode;
        parentDiv.replaceChild(sp1, sp2);
        pointBox.innerHTML = parseInt(pointBox.innerHTML) + 100;
+
+       winner();
        } else {
         // console.log(target.querySelectorAll(".fullHeart").length);
-        //Når hjerterne er fulde skal der komme et checkbox
+
+
+        if (this.querySelectorAll(".fullBelly").length == 1) {
+            console.log("stop");
+            console.log(this.querySelectorAll(".fullBelly").length);
+
+        } else {
+             //Når hjerterne er fulde skal der komme et checkbox✅)
         const full = document.createElement("span");
         full.className = "fullBelly";
         let check = document.createTextNode("✅");
-        full.appendChild(check);
-        
-        // fullBelly.classList.add('animate__animated animate__bounceInDown')
-        
+        full.appendChild(check);    
         event.toElement.appendChild(full)
+        }
+       
        } 
     
     } else {
-        alert("Puhaaaaaaaa! Er du dum eller hvad?");
+        alert("Puhaaaaaaaa! Det er da det forkerte mad!🤢");
         pointBox.innerHTML = parseInt(pointBox.innerHTML) - 100;
         // foodBox.removeChild(document.querySelector("#" + madId));
     }   
     
 
 }   
+
+function winner() {
+    let popup = document.querySelector("#win");
+    let point = parseInt(pointBox.innerHTML);
+    
+    if (point == 200) {
+        popup.style.opacity = 1;
+        popup.classList.add('animate__animated', 'animate__wobble');
+    }
+}
