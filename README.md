@@ -1,4 +1,10 @@
 # savanne-zoo
+
+LINK TIL NETLIFY https://savanne-zoo-opgave.netlify.app/
+
+
+
+
 Savanne zoo opgave m. Torben og Brian uge 12
 
 
